@@ -190,8 +190,8 @@ export default function SignUp() {
                   )}
                 </span>
               </div>
-              {errors.password && touched.password ? (
-                <p className="text-red-600 text-xs pl-2">{errors.password}</p>
+              {errors.confirm_password && touched.confirm_password ? (
+                <p className="text-red-600 text-xs pl-2">{errors.confirm_password}</p>
               ) : null}
             </div>
             <button
