@@ -4,6 +4,7 @@ import { signupSchema } from "../utils/schemas";
 import login from "../assets/login.jpg";
 import { Link } from "react-router-dom";
 
+// initialValues for signup fields you have to add this other wise uncontrolled error comes in
 const initialValues = {
   name: "",
   email: "",
@@ -13,6 +14,8 @@ const initialValues = {
 
 export default function SignUp() {
   const [open, setOpen] = useState(false);
+ 
+  //useFormik hook is used for validation and error handling for forms
   const { values, errors, touched, handleBlur, handleChange, handleSubmit } =
     useFormik({
       initialValues,
@@ -26,6 +29,7 @@ export default function SignUp() {
         action.resetForm();
       },
     });
+
   return (
     <section className="bg-gray-50 min-h-screen flex items-center justify-center">
       <div className="bg-gray-200 flex rounded-2xl shadow-lg max-w-3xl p-5 items-center">
@@ -86,6 +90,7 @@ export default function SignUp() {
                 <span
                   className="hover:cursor-pointer"
                   onClick={() => {
+                    //code for show password for better UX
                     let pass = document.getElementById("password");
 
                     if (pass.type === "password") {
@@ -146,6 +151,7 @@ export default function SignUp() {
                 <span
                   className="hover:cursor-pointer"
                   onClick={() => {
+                    //code for show password for better UX
                     let pass = document.getElementById("confirm_password");
 
                     if (pass.type === "password") {

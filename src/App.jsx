@@ -2,6 +2,7 @@ import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
+//route file for react 
 function App() {
   return (
     <BrowserRouter>

@@ -10,7 +10,9 @@ const initialValues = {
 };
 
 export default function Login() {
+
   const [open, setOpen] = useState(false);
+  
   const { values, errors, touched, handleBlur, handleChange, handleSubmit } =
     useFormik({
       initialValues,
@@ -67,7 +69,8 @@ export default function Login() {
 
                 <span
                   className="hover:cursor-pointer"
-                  onClick={() => {
+                  onClick={() => { 
+                    //code for show password for better UX
                     let pass = document.getElementById("password");
                    
                     if (pass.type === "password") {
