@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useFormik } from "formik";
 import { loginSchema } from "../utils/schemas";
 import login from "../assets/login.jpg";
+import {Link} from 'react-router-dom';
 
 const initialValues = {
   email: "",
@@ -29,7 +30,7 @@ export default function Login() {
         <div className="md:w-1/2 px-8 md:px-16">
           <h2 className="font-bold text-2xl text-[#002D74]">Login</h2>
           <p className="text-xs mt-4 text-[#002D74]">
-            If you are already a member, easily log in
+            If you are not a member, register first
           </p>
 
           <form onSubmit={handleSubmit} className="flex flex-col gap-4">
@@ -68,7 +69,7 @@ export default function Login() {
                   className="hover:cursor-pointer"
                   onClick={() => {
                     let pass = document.getElementById("password");
-                    console.log(pass.type);
+                   
                     if (pass.type === "password") {
                       pass.type = "text";
                     } else {
@@ -156,9 +157,11 @@ export default function Login() {
 
           <div className="mt-3 text-xs flex justify-between items-center text-[#002D74]">
             <p>Don't have an account?</p>
-            <button className="py-2 px-5 bg-white border rounded-xl hover:scale-110 duration-300">
-              Register
-            </button>
+            <Link to="/register">
+              <button className="py-2 px-5 bg-white border rounded-xl hover:scale-110 duration-300">
+                Register
+              </button>
+            </Link>
           </div>
         </div>
 
