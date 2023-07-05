@@ -1,5 +1,9 @@
+import Login from "./pages/Login";
+
 function App() {
-  return <p>hamza</p>;
+  return (
+   <Login/>
+  );
 }
 
 export default App;
