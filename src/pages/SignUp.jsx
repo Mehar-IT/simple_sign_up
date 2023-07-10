@@ -35,7 +35,7 @@ export default function SignUp() {
       <div className="bg-gray-200 flex rounded-2xl shadow-lg max-w-3xl p-5 items-center">
         <div className="md:w-1/2 px-8 md:px-16">
           <h2 className="font-bold text-2xl text-[#002D74]">Sign Up</h2>
-          <p className="text-xs mt-4 text-[#002D74]">
+          <p className="text-[13px] mt-4 text-[#002D74]">
             If you are already a member, easily log in
           </p>
 
@@ -202,10 +202,10 @@ export default function SignUp() {
             </button>
           </form>
 
-          <div className="mt-3 text-xs flex justify-between items-center text-[#002D74]">
+          <div className="mt-3 text-sm flex justify-between items-center text-[#002D74]">
             <p>Already have an account?</p>
             <Link to="/">
-              <button className="py-2 px-5 bg-white border rounded-xl hover:scale-110 duration-300">
+              <button className="py-2 px-5 text-sm bg-white border rounded-xl hover:scale-110 duration-300">
                 Login
               </button>
             </Link>

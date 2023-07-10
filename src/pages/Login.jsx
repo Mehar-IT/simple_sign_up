@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useFormik } from "formik";
 import { loginSchema } from "../utils/schemas";
 import login from "../assets/login.jpg";
-import {Link} from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 const initialValues = {
   email: "",
@@ -10,9 +10,8 @@ const initialValues = {
 };
 
 export default function Login() {
-
   const [open, setOpen] = useState(false);
-  
+
   const { values, errors, touched, handleBlur, handleChange, handleSubmit } =
     useFormik({
       initialValues,
@@ -31,14 +30,14 @@ export default function Login() {
       <div className="bg-gray-200 flex rounded-2xl shadow-lg max-w-3xl p-5 items-center">
         <div className="md:w-1/2 px-8 md:px-16">
           <h2 className="font-bold text-2xl text-[#002D74]">Login</h2>
-          <p className="text-xs mt-4 text-[#002D74]">
+          <p className="text-sm mt-4 text-[#002D74]">
             If you are not a member, register first
           </p>
 
-          <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+          <form onSubmit={handleSubmit} className="flex mt-3 flex-col">
             <div>
               <input
-                className="p-2 mt-8 rounded-xl border w-full"
+                className="p-2 rounded-xl border w-full"
                 type="email"
                 autoComplete="off"
                 name="email"
@@ -49,8 +48,10 @@ export default function Login() {
                 onBlur={handleBlur}
               />
               {errors.email && touched.email ? (
-                <p className="text-red-600 text-xs pl-2">{errors.email}</p>
-              ) : null}
+                <p className="text-red-600 text-xs pl-2 my-1">{errors.email}</p>
+              ) : (
+                <p className="text-red-600 text-xs pl-2 my-1">&nbsp;</p>
+              )}
             </div>
 
             <div>
@@ -69,10 +70,10 @@ export default function Login() {
 
                 <span
                   className="hover:cursor-pointer"
-                  onClick={() => { 
+                  onClick={() => {
                     //code for show password for better UX
                     let pass = document.getElementById("password");
-                   
+
                     if (pass.type === "password") {
                       pass.type = "text";
                     } else {
@@ -110,8 +111,10 @@ export default function Login() {
                 </span>
               </div>
               {errors.password && touched.password ? (
-                <p className="text-red-600 text-xs pl-2">{errors.password}</p>
-              ) : null}
+                <p className="text-red-600 text-xs pl-2 my-1">{errors.password}</p>
+              ) : (
+                <p className="text-red-600 text-xs pl-2 my-1">&nbsp;</p>
+              )}
             </div>
             <button
               type="submit"
@@ -154,14 +157,14 @@ export default function Login() {
             Login with Google
           </button>
 
-          <div className="mt-5 text-xs border-b border-[#002D74] py-4 text-[#002D74]">
+          <div className="mt-5 text-sm border-b border-[#002D74] py-4 text-[#002D74]">
             <a href="#">Forgot your password?</a>
           </div>
 
-          <div className="mt-3 text-xs flex justify-between items-center text-[#002D74]">
+          <div className="mt-3 text-sm flex justify-between items-center text-[#002D74]">
             <p>Don't have an account?</p>
             <Link to="/register">
-              <button className="py-2 px-5 bg-white border rounded-xl hover:scale-110 duration-300">
+              <button className="py-2 px-5 text-sm bg-white border rounded-xl hover:scale-110 duration-300">
                 Register
               </button>
             </Link>
